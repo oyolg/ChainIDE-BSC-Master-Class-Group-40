@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+     <head> <title> MORE HTML TAGS</title> 
+          <div class="header">   
+            <h1>Header</h1>
+          </div>
+     </head>
+     <body>
+          <button onclick = "Click123();"> Click Me </button>
+            <h2 id ="info"> </h2><br>
+           <script>
+               function Click123(){
+                   var a = document.getElementById("info);
+                   a.innerHTML = a.innerHTML + "<h5>" + "123" + "</h5>"; 
+                   
+                }
+           </script>
+
+           <h2>HTML Forms for INPUT</h2>
+
+           <form action="/processingCode">
+                <label for="uname">Name:</label><br>
+                <input type="text" id="uname" name="uname" value="John"><br>
+                <label for="score">Score:</label><br>
+                <input type="text" id="score" name="score" value="75"><br><br>
+                <input type="submit" value="Submit">
+          </form> 
+
+         <p>If you click the "Submit" button, the form-data will be sent to a page called "/ProcessingCode".</p>
+
+
+     </body>
+</html> 
+
