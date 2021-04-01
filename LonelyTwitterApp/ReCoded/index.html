@@ -1,1 +1,30 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="stwit.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title id ="header">
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script src='https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js'></script>
+</head>
+
+<body>
+
+    <h2>Transparent Dapp Demo</h2>
+    <br >
+    <h2 id="info"></h2><br>
+    <button onclick="getTweets();">Get All Tweets</button>
+    <button onclick="changeCoolNumber();">Write Lonely Tweet</button><br><br>
+    Name: <input id="name"></textbox><br>
+    Content: <input id="content"></textbox>
+    <br /><br />
+    Status: <span id="status">Loading...</span>
+    <script src="stwit.js"></script> 
+    
+</body>
+
+</html>
