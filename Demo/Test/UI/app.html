@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<!--  -->
+<html lang="en" >
+<head>
+ 
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <meta http-equiv="x-ua-compatible" content="ie=edge">
+ <meta name="description" content="">
+ <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<title>YFA Dapp</title>
+
+<link rel="stylesheet" href="./images/bootstrap.min.css">
+
+<link rel="stylesheet" href="./images/all.css">
+
+<link rel="stylesheet" href="./images/nice-select.css">
+
+<link rel="stylesheet" href="./images/slick.css">
+
+<link rel="stylesheet" href="./images/swiper.min.css">
+
+<link rel="stylesheet" href="./images/default.css">
+
+<link rel="stylesheet" href="./images/style.css">
+<link rel="stylesheet" href="./images/loader.css">
+
+<link rel="stylesheet" href="./images/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+<style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+            height: 0;
+        }
+
+        .iframe-container iframe {
+            position: absolute;c
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        @media screen and (max-width: 600px) {
+            .tkn1 {
+                padding-bottom: 55%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="loader_bg" style="display: none;">
+<div class="loader">
+</div>
+</div>
+
+<header class="header-area">
+<div class="header-nav sticky">
+<div class="container-fluid">
+<div class="row">
+<div class="col-lg-12">
+<div class="navigation">
+<nav class="navbar navbar-expand-lg navbar-light ">
+<a class="navbar-brand" >
+<img src="./images/banefits-4.png" height="70px;" alt=""></a>
+
+<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="toggler-icon"></span>
+<span class="toggler-icon"></span>
+<span class="toggler-icon"></span>
+</button> 
+<div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+<ul class="navbar-nav m-auto">
+<li class="nav-item">
+<a class="nav-link" href="#">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="">About</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="">Benefits</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="">Team</a>
+</li>
+ <li class="nav-item">
+<a class="nav-link" href="">Token</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="">Roadmap</a>
+</li>
+<li class="nav-item">
+<a href="" class="nav-link">Buy Token</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="">Contact</a>
+</li>
+</ul>
+</div> 
+</nav>
+</div> 
+</div>
+</div>
+</div>
+</div>
+</header>
+
+
+<section id="token"></section>
+<section class="stakeholders-area">
+<div class="container">
+<div class="row justify-content-center">
+<div class="col-lg-7">
+<div class="section-title text-center">
+<span>YFA Dapp Farming </span>
+<h3 class="title">Staking and Reward Claim</h3>
+<div  class="title">
+      <form action="/action_page.php">
+  <label  for="fname">Enter Amount to Stake:</label><br>
+  <input type="text" id="fname" name="fname" value="0.0"><br>
+  
+  <input type="submit" value="Stake">
+</form> 
+
+ </div> 
+</div>
+</div>
+</div>
+ 
+<div class="row token-left">
+<div class="col-lg-4">
+<div class="stakeholders-btn token-holder">
+
+</div>
+</div>
+<div class="col-lg-4 token-align">
+
+
+</div>
+<div class="col-lg-4">
+<div class="stakeholders-btn token-holder">
+
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="footer-copyright d-flex justify-content-between align-items-center">
+<p class="order-2 order-sm-1">© YFA Dapp</p>
+
+</div>
+</div>
+</div>
+</div>
+<div class="banefits-color-2">
+<img src="./images/color-bg-4.png" alt="">
+</div>
+</footer>
+
+
+<a id="scroll_up"><i class="fa fa-angle-up" aria-hidden="true"></i></a>
+
+
+<script>       
+        $("#ContactSubmit").click(function(e) {
+            e.preventDefault();
+            var retVal = checkValidate();
+            console.log(retVal);
+            if (retVal <= 0) {                
+                $.ajax({
+                    url: 'mail.php',
+                    method: 'POST',
+                    dataType: 'json',
+                    data: {
+                        name: $('#name').val(),
+                        subject: $('#subject').val(),
+                        comment: $('#comment').val(),
+                        email: $('#email').val()
+                    },
+                    success: function(response) {
+                        $('#contact-form')[0].reset();
+                        $("#contact-form").hide();
+                        $("#message").html("Your submission is received and we will contact you soon<br/><h1 class='text-white'>Thank You</h1>");                       
+                    }
+                });
+            } else {
+                return false;
+            }
+        });
+
+        function checkValidate() {
+            var name = $.trim($("#name").val());
+            var email = $.trim($("#email").val());
+            var subject = $("#subject").val();
+            var chk_err = 0;
+
+            if (name == "") {
+                $("#name").addClass("text-danger");
+                $("#error_name").text("*Please enter your name.");
+                chk_err++;
+            } else {
+                $("#error_name").text("");
+                $("#name").removeClass("text-danger");
+            }
+
+            if (email == "") {
+                $("#email").addClass("text-danger");
+                $("#error_email").text("*Please enter Email.");
+                chk_err++;
+            } else {
+                $("#error_email").text("");
+                $("#email").removeClass("text-danger");
+            }
+
+            if (subject == "") {
+                $("#subject").addClass("text-danger");
+                $("#error_subject").text("*Please enter Subject.");
+                chk_err++;
+            } else {
+                $("#error_subject").text("");
+                $("#subject").removeClass("text-danger");
+            }
+            return chk_err;
+
+        }
+    </script>
+<script src="./images/jquery.min.js.download"></script>
+
+
+</body></html>
