@@ -1,1 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="yfa.css">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title id ="header">
+    </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    
+    <script src='https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js'></script>
+</head>
 
+<body>
+
+    <h2>YFA Farming Dapp </h2>
+    <br >
+    <h2 id="info"></h2><br>
+    <button onclick="getStake();">Check your Stakes</button>
+    <button onclick="stakeToken();">Stake DaiToken</button><br><br>
+    Amount to Stake(Dai) : <input id="amount"></textbox><br>
+    Amount to UnStake : <input id="unstakeAmt"></textbox>
+    <br /><br />
+    Status: <span id="status">Loading...</span>
+    <script src="Yfa.js"></script> 
+    
+</body>
+
+</html>
